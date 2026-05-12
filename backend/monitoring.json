@@ -1,0 +1,5 @@
+{
+    "model_status": "trained",
+    "accuracy": 0.8315789473684211,
+    "message": "Model trained successfully and ready for prediction"
+}

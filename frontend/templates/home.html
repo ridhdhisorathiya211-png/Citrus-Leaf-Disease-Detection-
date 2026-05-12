@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Leaf Health Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page-home">
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-mark">CL</span>
+            <span class="brand-text">Citrus Leaf Lab</span>
+        </a>
+        <div class="nav-links">
+            <a class="active" href="/">Home</a>
+            <a href="/prediction">Prediction</a>
+            <a href="/about">About</a>
+        </div>
+        <a href="/prediction" class="nav-btn">Start Prediction</a>
+    </nav>
+
+    <main class="page-wrap">
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="hero-badge">Machine Learning For Leaf Screening</div>
+                <h1>Early Citrus Disease Detection From a Single Image</h1>
+                <p class="hero-text">
+                    Upload a citrus leaf photo and get an instant healthy or diseased
+                    prediction from a trained Random Forest model. Fast screening helps
+                    identify crop problems before they spread.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/prediction" class="btn">Try Predictor</a>
+                    <a href="/about" class="btn-outline">See Workflow</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
+

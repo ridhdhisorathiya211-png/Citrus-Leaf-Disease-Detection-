@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Leaf Health Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page-about">
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-mark">CL</span>
+            <span class="brand-text">Citrus Leaf Lab</span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/prediction">Prediction</a>
+            <a class="active" href="/about">About</a>
+        </div>
+        <a href="/prediction" class="nav-btn">Try Predictor</a>
+    </nav>
+
+    <main class="page-wrap">
+        <section class="page-header">
+            <div class="hero-badge">System Breakdown</div>
+            <h1>How The Detection Pipeline Works</h1>
+            <p>
+                The project combines image preprocessing, supervised learning, and web
+                deployment to provide practical citrus leaf health assessment.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <div class="about-grid">
+                <article class="about-card">
+                    <div class="icon-box">01</div>
+                    <h3>Data Collection</h3>
+                    <p>Leaf images are collected by class and screened for label correctness and visual quality.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">02</div>
+                    <h3>Preprocessing</h3>
+                    <p>Images are converted to a standard size and normalized to stabilize training behavior.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">03</div>
+                    <h3>Feature Vector Creation</h3>
+                    <p>Resized images are flattened into numeric vectors for machine learning classification.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">04</div>
+                    <h3>Label Encoding</h3>
+                    <p>Class names are encoded into model-friendly numeric labels and stored for inference reuse.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">05</div>
+                    <h3>Random Forest Training</h3>
+                    <p>The classifier is trained on split data and evaluated on a held-out test set.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">06</div>
+                    <h3>Evaluation And Tracking</h3>
+                    <p>Accuracy and run metadata are written to monitoring files for transparent performance tracking.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">07</div>
+                    <h3>Model Serialization</h3>
+                    <p>Model and encoder artifacts are saved and loaded by Flask for repeatable predictions.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="icon-box">08</div>
+                    <h3>Web Inference</h3>
+                    <p>Users upload a leaf image in the interface and instantly receive classification output.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+

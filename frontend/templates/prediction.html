@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - Leaf Health Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page-predict">
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-mark">CL</span>
+            <span class="brand-text">Citrus Leaf Lab</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a class="active" href="/prediction">Prediction</a>
+            <a href="/about">About</a>
+        </div>
+
+        <a href="/prediction" class="nav-btn">Run Model</a>
+    </nav>
+
+    <main class="page-wrap">
+        <section class="predict-section">
+            <div class="predict-header">
+                <div class="hero-badge">Leaf Disease Detection System</div>
+                <h1>Upload And Predict</h1>
+                <p>
+                    Submit a leaf image and the model returns a health class with
+                    current training accuracy.
+                </p>
+            </div>
+
+            <div class="predict-layout">
+                <article class="predict-card upload-card">
+                    <h2>Input Image</h2>
+                    <p class="card-text">Supported formats: JPG, JPEG, PNG</p>
+                    <form method="POST" enctype="multipart/form-data" class="upload-form">
+                        <label class="file-label" for="leaf-file">Choose Image</label>
+                        <input id="leaf-file" type="file" name="file" required>
+                        <button type="submit" class="btn">Predict Now</button>
+                    </form>
+                </article>
+
+                <article class="predict-card result-card">
+                    {% if image_file %}
+                        <div class="image-preview">
+                            <h2>Uploaded Image</h2>
+                            <img src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Uploaded leaf image">
+                        </div>
+                    {% else %}
+                        <div class="empty-state">
+                            <h2>No Image Uploaded Yet</h2>
+                            <p>Upload a leaf photo to view prediction and confidence context.</p>
+                        </div>
+                    {% endif %}
+
+                    {% if result or accuracy %}
+                        <div class="result-grid">
+                            {% if result %}
+                                <div class="result-box">
+                                    <h3>Prediction</h3>
+                                    <p>{{ result }}</p>
+                                </div>
+                            {% endif %}
+
+                            {% if accuracy %}
+                                <div class="accuracy-box">
+                                    <h3>Model Accuracy</h3>
+                                    <p>{{ accuracy }}%</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+

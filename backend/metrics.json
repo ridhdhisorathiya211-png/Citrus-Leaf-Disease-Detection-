@@ -1,0 +1,15 @@
+{
+    "accuracy": 0.8315789473684211,
+    "total_images": 7600,
+    "train_images": 6080,
+    "test_images": 1520,
+    "classes": [
+        "Diseased",
+        "Healthy"
+    ],
+    "image_size": [
+        32,
+        32
+    ],
+    "max_images_per_class": 200
+}
